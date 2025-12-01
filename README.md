@@ -4,7 +4,7 @@ This project is a simple library management system developed using JavaFX and SQ
 
 
 Features:
-1. Member Side
+1. Member Side ->
 Register and log in,
 View and update profile information (phone, email, address),
 List all books and search by title, author, category, or ISBN,
@@ -12,7 +12,7 @@ Borrow available books (loan date + 14-day due date),
 View active and past loans on the "My Books" screen.
 
 
-2. Librarian Side
+2. Librarian Side ->
 Dashboard: total books, members, active loans, and overdue counts,
 Books Management: add, delete, update books,
 Members Management: view, search, and edit member information,
