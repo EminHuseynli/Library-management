@@ -40,9 +40,6 @@ By default, the library.db file is located in the project root. Use db/schema.sq
 
 
 ## Screenshots
-![Login screen]
-<img width="731" height="508" alt="Screenshot (2)" src="https://github.com/user-attachments/assets/03e537c8-d94f-40bc-a43d-445798a89a2d" />
-
-<img width="739" height="522" alt="Screenshot (3)" src="https://github.com/user-attachments/assets/6febe3c7-7188-468f-be67-507d0e175707" />
+![Login screen] <img width="731" height="508" alt="Screenshot (2)" src="https://github.com/user-attachments/assets/03e537c8-d94f-40bc-a43d-445798a89a2d" /> <img width="739" height="522" alt="Screenshot (3)" src="https://github.com/user-attachments/assets/6febe3c7-7188-468f-be67-507d0e175707" />
 
 
