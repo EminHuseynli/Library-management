@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="420.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.controller.LoginMemberRegisterController">
+
+
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="10" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+
+            <children>
+                <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-padding: 0 0 10 0;" text="Create Member Account" />
+
+                <GridPane hgap="10" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" minWidth="100" />
+                        <ColumnConstraints halignment="LEFT" minWidth="200" />
+                    </columnConstraints>
+
+                    <children>
+                        <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <Label text="Surname:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="surnameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                        <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                        <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                        <Label text="Home address:" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.valignment="TOP" />
+                        <TextArea fx:id="addressArea" prefRowCount="3" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                    </children>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+
+                <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10 0 0 0;">
+                    <children>
+                        <Button onAction="#handleRegister" prefWidth="100" text="Register" />
+
+                        <Button onAction="#handleCancel" prefWidth="100" text="Cancel" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+
+</AnchorPane>

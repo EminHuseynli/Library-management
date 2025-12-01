@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="library.controller.MemberBooksController"
+            prefHeight="500.0" prefWidth="900.0">
+
+
+    <children>
+        <VBox spacing="10"
+              AnchorPane.topAnchor="10.0"
+              AnchorPane.leftAnchor="10.0"
+              AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+
+            <HBox spacing="10">
+                <children>
+                    <Label text="Search:"/>
+                    <TextField fx:id="searchField"
+                               promptText="Title, author, ISBN, category"
+                               HBox.hgrow="ALWAYS"/>
+                    <Button text="Search" onAction="#handleSearch"/>
+                    <Button text="Clear" onAction="#handleClearSearch"/>
+                </children>
+            </HBox>
+
+            <!-- Books table -->
+            <TableView fx:id="booksTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="titleColumn" text="Title" prefWidth="180.0"/>
+                    <TableColumn fx:id="authorColumn" text="Author" prefWidth="140.0"/>
+                    <TableColumn fx:id="isbnColumn" text="ISBN" prefWidth="120.0"/>
+                    <TableColumn fx:id="categoryColumn" text="Category" prefWidth="120.0"/>
+                    <TableColumn fx:id="availabilityColumn" text="Availability" prefWidth="120.0"/>
+                </columns>
+            </TableView>
+
+            <GridPane hgap="10" vgap="8">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="120" halignment="RIGHT"/>
+                    <ColumnConstraints minWidth="240" halignment="LEFT"/>
+                    <ColumnConstraints minWidth="120" halignment="RIGHT"/>
+                    <ColumnConstraints minWidth="240" halignment="LEFT"/>
+                </columnConstraints>
+
+                <children>
+                    <Label text="Selected book:"
+                           GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <Label fx:id="selectedBookLabel"
+                           text="-"
+                           GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Loan date:"
+                           GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <DatePicker fx:id="loanDatePicker"
+                                GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Due date (14 gün):"
+                           GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                    <Label fx:id="dueDateLabel"
+                           text="-"
+                           GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+                </children>
+            </GridPane>
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <children>
+                    <Button text="Borrow book"
+                            onAction="#handleBorrowBook"/>
+                </children>
+            </HBox>
+
+        </VBox>
+    </children>
+
+
+
+</AnchorPane>

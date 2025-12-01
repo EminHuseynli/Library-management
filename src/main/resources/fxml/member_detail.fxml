@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="library.controller.MemberDetailController"
+            prefHeight="450.0" prefWidth="600.0">
+
+    <children>
+        <VBox spacing="10"
+              AnchorPane.topAnchor="10.0"
+              AnchorPane.leftAnchor="10.0"
+              AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+
+            <Label text="Member details"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+            <!-- Member information -->
+            <GridPane hgap="10" vgap="5">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="100" halignment="RIGHT"/>
+                    <ColumnConstraints minWidth="200" halignment="LEFT"/>
+                    <ColumnConstraints minWidth="100" halignment="RIGHT"/>
+                    <ColumnConstraints minWidth="200" halignment="LEFT"/>
+                </columnConstraints>
+
+                <children>
+                    <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <Label fx:id="nameLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Surname:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                    <Label fx:id="surnameLabel" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                    <Label text="Username:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <Label fx:id="usernameLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Phone:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                    <Label fx:id="phoneLabel" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+                    <Label text="Email:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <Label fx:id="emailLabel" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Address:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <Label fx:id="addressLabel" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                           GridPane.columnSpan="3"/>
+                </children>
+            </GridPane>
+
+            <Separator/>
+
+            <!-- Favorite category -->
+            <HBox spacing="10">
+                <children>
+                    <Label text="Favorite category:"
+                           style="-fx-font-weight: bold;"/>
+                    <Label fx:id="favoriteCategoryLabel" text="-"/>
+                </children>
+            </HBox>
+
+            <!-- Loan history table -->
+            <Label text="Loan history:"
+                   style="-fx-font-weight: bold;"/>
+
+            <TableView fx:id="loanTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="bookTitleColumn" text="Book title" prefWidth="180.0"/>
+                    <TableColumn fx:id="categoryColumn" text="Category" prefWidth="120.0"/>
+                    <TableColumn fx:id="loanDateColumn" text="Loan date" prefWidth="100.0"/>
+                    <TableColumn fx:id="dueDateColumn" text="Due date" prefWidth="100.0"/>
+                    <TableColumn fx:id="returnDateColumn" text="Return date" prefWidth="100.0"/>
+                </columns>
+            </TableView>
+
+        </VBox>
+    </children>
+
+</AnchorPane>

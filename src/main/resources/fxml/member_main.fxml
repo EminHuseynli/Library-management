@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="library.controller.MemberMainController"
+            prefHeight="600.0" prefWidth="900.0">
+
+    <children>
+        <VBox spacing="10"
+              AnchorPane.topAnchor="10.0"
+              AnchorPane.leftAnchor="10.0"
+              AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+
+            <Label text="Member Panel"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold;"
+                   VBox.vgrow="NEVER"/>
+
+            <TabPane tabClosingPolicy="UNAVAILABLE"
+                     VBox.vgrow="ALWAYS">
+
+                <tabs>
+
+                    <Tab text="Profile">
+                        <content>
+                            <VBox spacing="15" style="-fx-padding: 20;">
+                                <children>
+
+                                    <Label text="Profile"
+                                           style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                                    <GridPane hgap="10" vgap="10">
+                                        <columnConstraints>
+                                            <ColumnConstraints minWidth="120" halignment="RIGHT"/>
+                                            <ColumnConstraints minWidth="220" halignment="LEFT"/>
+                                        </columnConstraints>
+
+                                        <children>
+                                            <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                            <Label fx:id="nameLabel"
+                                                   text="-"
+                                                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                            <Label text="Surname:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                            <Label fx:id="surnameLabel"
+                                                   text="-"
+                                                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                            <Label text="Username:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                            <Label fx:id="usernameLabel"
+                                                   text="-"
+                                                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                                            <Label text="Phone:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                                            <TextField fx:id="phoneField"
+                                                       promptText="Telephone"
+                                                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                                            <Label text="Email:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                                            <TextField fx:id="emailField"
+                                                       promptText="Email"
+                                                       GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                                            <Label text="Address:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                                            <TextArea fx:id="addressArea"
+                                                      promptText="Home address (optional)"
+                                                      wrapText="true"
+                                                      prefRowCount="3"
+                                                      GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                                        </children>
+                                    </GridPane>
+
+                                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                                        <children>
+                                            <Button text="Update profile"
+                                                    onAction="#handleUpdateProfile"/>
+                                        </children>
+                                    </HBox>
+
+                                </children>
+                            </VBox>
+                        </content>
+                    </Tab>
+
+                    <!-- 2) BOOKS TAB -->
+                    <Tab text="Books">
+                        <content>
+                            <fx:include source="member_books.fxml" fx:id="memberBooks"/>
+                        </content>
+                    </Tab>
+
+                    <!-- 3) MY BOOKS TAB -->
+                    <Tab text="My books">
+                        <content>
+                            <fx:include source="member_my_books.fxml" fx:id="memberMyBooks"/>
+                        </content>
+                    </Tab>
+
+                </tabs>
+            </TabPane>
+        </VBox>
+    </children>
+
+
+</AnchorPane>

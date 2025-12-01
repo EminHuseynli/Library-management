@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="library.controller.LibrarianMainController"
+            prefHeight="600.0" prefWidth="900.0">
+
+    <children>
+        <VBox spacing="10"
+              AnchorPane.topAnchor="10.0"
+              AnchorPane.leftAnchor="10.0"
+              AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+
+            <Label text="Librarian Panel"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold;"
+                   VBox.vgrow="NEVER"/>
+
+            <TabPane tabClosingPolicy="UNAVAILABLE"
+                     VBox.vgrow="ALWAYS">
+
+
+                <tabs>
+                    <Tab text="Dashboard">
+                        <content>
+                            <VBox spacing="20" style="-fx-padding: 20;">
+                                <children>
+
+                                    <Label text="Dashboard"
+                                           style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                                    <GridPane hgap="20" vgap="15">
+                                        <columnConstraints>
+                                            <ColumnConstraints minWidth="200" halignment="RIGHT"/>
+                                            <ColumnConstraints minWidth="100" halignment="LEFT"/>
+                                        </columnConstraints>
+
+                                        <children>
+                                            <!-- Total book count -->
+                                            <Label text="Total book count:"
+                                                   GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                            <Label fx:id="totalBooksLabel"
+                                                   text="0"
+                                                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                            <!-- Total member count -->
+                                            <Label text="Total member count:"
+                                                   GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                            <Label fx:id="totalMembersLabel"
+                                                   text="0"
+                                                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                            <!-- Number of books currently on loan. -->
+                                            <Label text="umber of books currently on loan.:"
+                                                   GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                            <Label fx:id="activeLoansLabel"
+                                                   text="0"
+                                                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                                            <!-- Number of members with active loans:-->
+                                            <Label text="Number of members with active loans::"
+                                                   GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                                            <Label fx:id="membersWithActiveLoansLabel"
+                                                   text="0"
+                                                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                                            <!-- Number of overdue books -->
+                                            <Label text="Number of overdue books:"
+                                                   GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                                            <Label fx:id="overdueLoansLabel"
+                                                   text="0"
+                                                   GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                                        </children>
+                                    </GridPane>
+                                </children>
+                            </VBox>
+                        </content>
+                    </Tab>
+
+                    <!-- 2) BOOKS TAB -->
+                    <Tab text="Books">
+                        <content>
+                            <fx:include source="librarian_books.fxml"/>
+                        </content>
+                    </Tab>
+
+                    <!-- 3) LOAN TAB -->
+                    <Tab text="Loan">
+                        <content>
+                            <fx:include source="librarian_loan.fxml"/>
+                        </content>
+                    </Tab>
+
+                    <!-- 4) MEMBERS TAB -->
+                    <Tab text="Members">
+                        <content>
+                            <fx:include source="librarian_members.fxml"/>
+                        </content>
+                    </Tab>
+
+                    <!-- 5) TOP TAB -->
+                    <Tab text="Top">
+                        <content>
+                            <fx:include source="librarian_top.fxml"/>
+                        </content>
+                    </Tab>
+
+                    <!-- 6) ISSUED BOOKS TAB -->
+                    <Tab text="Issued books">
+                        <content>
+                            <fx:include source="librarian_issued_books.fxml"/>
+                        </content>
+                    </Tab>
+
+                </tabs>
+            </TabPane>
+        </VBox>
+    </children>
+
+</AnchorPane>

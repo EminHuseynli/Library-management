@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="library.controller.LibrarianTopController"
+            prefHeight="500.0" prefWidth="900.0">
+
+    <children>
+        <VBox spacing="10"
+              AnchorPane.topAnchor="10.0"
+              AnchorPane.leftAnchor="10.0"
+              AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+
+            <Label text="Top authors and categories"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+            <HBox spacing="20">
+
+                <VBox spacing="5">
+                    <children>
+                        <Label text="Top 5 authors"
+                               style="-fx-font-weight: bold;"/>
+
+                        <TableView fx:id="topAuthorsTable" prefWidth="400.0" prefHeight="400.0">
+                            <columns>
+                                <TableColumn fx:id="authorNameColumn"
+                                             text="Author"
+                                             prefWidth="260.0"/>
+                                <TableColumn fx:id="authorCountColumn"
+                                             text="Loan count"
+                                             prefWidth="120.0"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+
+                <!-- Top Categories -->
+                <VBox spacing="5">
+                    <children>
+                        <Label text="Top 5 categories"
+                               style="-fx-font-weight: bold;"/>
+
+                        <TableView fx:id="topCategoriesTable" prefWidth="400.0" prefHeight="400.0">
+                            <columns>
+                                <TableColumn fx:id="categoryNameColumn"
+                                             text="Category"
+                                             prefWidth="260.0"/>
+                                <TableColumn fx:id="categoryCountColumn"
+                                             text="Loan count"
+                                             prefWidth="120.0"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+
+            </HBox>
+
+        </VBox>
+    </children>
+
+</AnchorPane>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="library.controller.LibrarianLoanController"
+            prefHeight="500.0" prefWidth="900.0">
+
+
+    <children>
+        <VBox spacing="10"
+              AnchorPane.topAnchor="10.0"
+              AnchorPane.leftAnchor="10.0"
+              AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+
+            <Label text="Lend a book to a member."
+                   style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+
+            <!-- First table: member & book -->
+            <HBox spacing="20" VBox.vgrow="ALWAYS">
+
+                <!-- Members -->
+                <VBox spacing="8" HBox.hgrow="ALWAYS">
+                    <children>
+
+                        <Label text="Members"/>
+
+                        <HBox spacing="5">
+                            <children>
+                                <TextField fx:id="memberSearchField"
+                                           promptText="Search by name, surname, telephone"
+                                           HBox.hgrow="ALWAYS"/>
+                                <Button text="Search" onAction="#handleSearchMembers"/>
+                                <Button text="Clear" onAction="#handleClearMemberSearch"/>
+                            </children>
+                        </HBox>
+
+                        <TableView fx:id="membersTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="memberNameColumn" text="Name" prefWidth="100.0"/>
+                                <TableColumn fx:id="memberSurnameColumn" text="Surname" prefWidth="100.0"/>
+                                <TableColumn fx:id="memberUsernameColumn" text="Username" prefWidth="120.0"/>
+                                <TableColumn fx:id="memberPhoneColumn" text="Phone" prefWidth="100.0"/>
+                            </columns>
+                        </TableView>
+
+                    </children>
+                </VBox>
+
+                <!-- Books -->
+                <VBox spacing="8" HBox.hgrow="ALWAYS">
+                    <children>
+
+                        <Label text="Books"/>
+
+                        <HBox spacing="5">
+                            <children>
+                                <TextField fx:id="bookSearchField"
+                                           promptText="Title, author, ISBN, category"
+                                           HBox.hgrow="ALWAYS"/>
+                                <Button text="Search" onAction="#handleSearchBooks"/>
+                                <Button text="Clear" onAction="#handleClearBookSearch"/>
+                            </children>
+                        </HBox>
+
+                        <TableView fx:id="booksTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="bookTitleColumn" text="Title" prefWidth="140.0"/>
+                                <TableColumn fx:id="bookAuthorColumn" text="Author" prefWidth="120.0"/>
+                                <TableColumn fx:id="bookIsbnColumn" text="ISBN" prefWidth="120.0"/>
+                                <TableColumn fx:id="bookCategoryColumn" text="Category" prefWidth="100.0"/>
+                            </columns>
+                        </TableView>
+
+                    </children>
+                </VBox>
+
+            </HBox>
+
+            <!-- ALT: Chosen member & book + date + buton -->
+            <GridPane hgap="15" vgap="8">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="120" halignment="RIGHT"/>
+                    <ColumnConstraints minWidth="200" halignment="LEFT"/>
+                    <ColumnConstraints minWidth="120" halignment="RIGHT"/>
+                    <ColumnConstraints minWidth="200" halignment="LEFT"/>
+                </columnConstraints>
+
+                <children>
+                    <Label text="Selected member:"
+                           GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <Label fx:id="selectedMemberLabel"
+                           text="-"
+                           GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Selected book:"
+                           GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <Label fx:id="selectedBookLabel"
+                           text="-"
+                           GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Loan date:"
+                           GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                    <DatePicker fx:id="loanDatePicker"
+                                GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                    <Label text="Due date (14 gün):"
+                           GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                    <Label fx:id="dueDateLabel"
+                           text="-"
+                           GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+                </children>
+            </GridPane>
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <children>
+                    <Button text="Issue loan"
+                            onAction="#handleIssueLoan"/>
+                </children>
+            </HBox>
+
+        </VBox>
+    </children>
+
+
+</AnchorPane>

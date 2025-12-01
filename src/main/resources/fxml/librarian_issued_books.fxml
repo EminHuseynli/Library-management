@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="library.controller.LibrarianIssuedBooksController"
+            prefHeight="500.0" prefWidth="900.0">
+
+    <children>
+        <VBox spacing="10"
+              AnchorPane.topAnchor="10.0"
+              AnchorPane.leftAnchor="10.0"
+              AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+
+            <Label text="Overdue books"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+            <HBox spacing="20">
+
+                <VBox spacing="8">
+                    <children>
+                        <Label text="Overdue loans"
+                               style="-fx-font-weight: bold;"/>
+
+                        <TableView fx:id="overdueTable"
+                                   prefWidth="520.0"
+                                   prefHeight="400.0">
+                            <columns>
+                                <TableColumn fx:id="bookTitleColumn"
+                                             text="Book title"
+                                             prefWidth="180.0"/>
+                                <TableColumn fx:id="memberNameColumn"
+                                             text="Member"
+                                             prefWidth="160.0"/>
+                                <TableColumn fx:id="loanDateColumn"
+                                             text="Loan date"
+                                             prefWidth="80.0"/>
+                                <TableColumn fx:id="dueDateColumn"
+                                             text="Due date"
+                                             prefWidth="80.0"/>
+                                <TableColumn fx:id="daysOverdueColumn"
+                                             text="Days overdue"
+                                             prefWidth="90.0"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+
+                <VBox spacing="8" prefWidth="300.0">
+                    <children>
+                        <Label text="Loan and member details"
+                               style="-fx-font-weight: bold;"/>
+
+                        <GridPane hgap="8" vgap="5">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="90" halignment="RIGHT"/>
+                                <ColumnConstraints minWidth="190" halignment="LEFT"/>
+                            </columnConstraints>
+
+                            <children>
+                                <!-- Book -->
+                                <Label text="Book:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <Label fx:id="bookTitleLabel"
+                                       text="-"
+                                       wrapText="true"
+                                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                <Label text="Category:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <Label fx:id="bookCategoryLabel"
+                                       text="-"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <!-- Member -->
+                                <Label text="Member:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <Label fx:id="memberNameLabel"
+                                       text="-"
+                                       GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                                <Label text="Username:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                                <Label fx:id="memberUsernameLabel"
+                                       text="-"
+                                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                                <Label text="Phone:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                                <Label fx:id="memberPhoneLabel"
+                                       text="-"
+                                       GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                                <Label text="Email:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                                <Label fx:id="memberEmailLabel"
+                                       text="-"
+                                       wrapText="true"
+                                       GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                                <Label text="Address:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                                <Label fx:id="memberAddressLabel"
+                                       text="-"
+                                       wrapText="true"
+                                       GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                                <!-- Dates -->
+                                <Label text="Loan date:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                                <Label fx:id="loanDateLabel"
+                                       text="-"
+                                       GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+                                <Label text="Due date:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                                <Label fx:id="dueDateLabel"
+                                       text="-"
+                                       GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+                                <Label text="Days overdue:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+                                <Label fx:id="daysOverdueLabel"
+                                       text="-"
+                                       GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+                            </children>
+                        </GridPane>
+
+                    </children>
+                </VBox>
+
+            </HBox>
+        </VBox>
+    </children>
+
+</AnchorPane>

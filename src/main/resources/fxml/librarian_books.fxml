@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.controller.LibrarianBooksController">
+
+    <children>
+        <HBox spacing="20" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+
+            <VBox spacing="10" HBox.hgrow="ALWAYS">
+                <children>
+
+                    <HBox spacing="10">
+                        <children>
+                            <Label text="Search:" />
+                            <TextField fx:id="searchField" promptText="Title, author, ISBN, category" HBox.hgrow="ALWAYS" />
+                            <Button onAction="#handleSearch" text="Search" />
+                            <Button onAction="#handleClearSearch" text="Clear" />
+                        </children>
+                    </HBox>
+
+                    <TableView fx:id="booksTable" prefHeight="400.0" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="titleColumn" prefWidth="174.60000896453857" text="Title" />
+                            <TableColumn fx:id="authorColumn" prefWidth="155.7999725341797" text="Author" />
+                            <TableColumn fx:id="isbnColumn" prefWidth="89.20001220703125" text="ISBN" />
+                            <TableColumn fx:id="categoryColumn" prefWidth="99.39996337890625" text="Category" />
+                            <TableColumn fx:id="copyCountColumn" prefWidth="186.20001220703125" text="Copies" />
+                        </columns>
+                    </TableView>
+
+                </children>
+            </VBox>
+
+            <VBox prefWidth="260" spacing="8">
+                <children>
+                    <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Create new book" />
+
+                    <Label text="Title:" />
+                    <TextField fx:id="newTitleField" />
+
+                    <Label text="Author:" />
+                    <TextField fx:id="newAuthorField" />
+
+                    <Label text="ISBN:" />
+                    <TextField fx:id="newIsbnField" />
+
+                    <Label text="Category:" />
+                    <TextField fx:id="newCategoryField" />
+
+                    <Label text="Copy count:" />
+                    <TextField fx:id="newCopyCountField" promptText="Örn: 3" />
+
+                    <Button maxWidth="Infinity" onAction="#handleAddBook" text="Add Book" />
+
+                    <Separator />
+
+                    <Label style="-fx-font-weight: bold;" text="Edit the selected book." />
+
+                    <Button maxWidth="Infinity" onAction="#handleEditSelectedBook" text="Edit selected" />
+                </children>
+            </VBox>
+
+        </HBox>
+    </children>
+
+</AnchorPane>
