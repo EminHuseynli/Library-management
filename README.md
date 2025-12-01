@@ -21,8 +21,8 @@ Top Screen: top 5 most used authors and categories,
 Issued/Overdue Screen: overdue books and related member details.
 
 
-Technologies Used:
--Java 25
+Technologies Used ->
+Java 25
 -JavaFX 25
 -Maven
 -SQLite (JDBC: org.xerial:sqlite-jdbc)
