@@ -22,20 +22,20 @@ Issued/Overdue Screen: overdue books and related member details.
 
 
 Technologies Used ->
-Java 25
--JavaFX 25
--Maven
--SQLite (JDBC: org.xerial:sqlite-jdbc)
+Java 25,
+JavaFX 25,
+Maven,
+SQLite (JDBC: org.xerial:sqlite-jdbc).
 
 
-How to Run:
-1. Make sure JDK and Maven are installed.
-2. Clone the project.
-3. Build with Maven.
-4. Open the project in IntelliJ IDEA and configure JavaFX VM options (if not using a JavaFX plugin).
+How to Run ->
+Make sure JDK and Maven are installed,
+Clone the project,
+Build with Maven,
+Open the project in IntelliJ IDEA and configure JavaFX VM options (if not using a JavaFX plugin).
 
 
-Database:
+Database ->
 By default, the library.db file is located in the project root. Use db/schema.sql for the database schema. Use db/sample_data.sql for sample data
 
 
